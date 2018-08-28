@@ -4,7 +4,7 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 var isReady = true;
 
-fs.readdir("/commands/", (err, files) => {
+fs.readdir("./commands/", (err, files) => {
 
   if(err) console.log(err);
   let jsfile = files.filter(f => f.split(".").pop() === "js");
