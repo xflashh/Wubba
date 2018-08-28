@@ -4,7 +4,7 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 var isReady = true;
 
-fs.readdir("wubba/commands/", (err, files) => {
+fs.readdir("/commands/", (err, files) => {
 
   if(err) console.log(err);
   let jsfile = files.filter(f => f.split(".").pop() === "js");
@@ -14,7 +14,7 @@ fs.readdir("wubba/commands/", (err, files) => {
   }
 
   jsfile.forEach((f, i) =>{
-    let props = require(`wubba/commands/${f}`);
+    let props = require(`/commands/${f}`);
     console.log(`${f} loaded!`);
     bot.commands.set(props.help.name, props);
   });
@@ -47,7 +47,7 @@ bot.on("message", async message => {
             return message.reply("Not In Channel")
     VC.join()
         .then(connection => {
-            const dispatcher = connection.playFile('wubba/start.mp3');
+            const dispatcher = connection.playFile('./start.mp3');
             dispatcher.on("end", end => {VC.leave()});
         })
         .catch(console.error);
