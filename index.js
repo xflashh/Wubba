@@ -47,9 +47,7 @@ bot.on("message", async message => {
             return message.reply("Not In Channel")
     VC.join()
         .then(connection => {
-            const dispatcher = connection.playFile('
-      wubba/start.mp3
-    ');
+            const dispatcher = connection.playFile('wubba/start.mp3');
             dispatcher.on("end", end => {VC.leave()});
         })
         .catch(console.error);
