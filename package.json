@@ -1,0 +1,18 @@
+{
+  "name": "wubba",
+  "version": "1.0.0",
+  "description": "a custom bot!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gatis kandis",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "discord.js-music-v11": "^1.3.4",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-binaries": "^4.0.0",
+    "ms": "^2.1.1"
+  }
+}
